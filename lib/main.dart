@@ -10,8 +10,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: prefer_const_constructors
     return MaterialApp(
-      home: IntroFirstStep(),
+      debugShowCheckedModeBanner: false,
+      // ignore: prefer_const_constructors
+      home: Scaffold(
+        body: const IntroFirstStep(),
+      ),
     );
   }
 }
