@@ -19,7 +19,7 @@ class IntroFirstStep extends StatelessWidget {
         ),
         child: Container(
           width: double.infinity,
-          padding: EdgeInsets.only(bottom: height / 8),
+          padding: EdgeInsets.only(bottom: height / 16),
           decoration: const BoxDecoration(
             color: Color(0xffffffff),
             image: DecorationImage(
@@ -118,6 +118,16 @@ class IntroFirstStep extends StatelessWidget {
                       ),
                     ),
                   ],
+                ),
+              ),
+              SizedBox(
+                height: width / 32,
+              ),
+              SizedBox(
+                width: width / 3.8,
+                // height: height / 14,
+                child: Image.asset(
+                  'assets/design/images/native-home-indicator-6gv.png',
                 ),
               ),
             ],
