@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:meu_barbeiro/screens/components/text_widget.dart';
 import 'package:meu_barbeiro/values/colors.dart';
 
@@ -22,6 +23,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
     return Scaffold(
       appBar: AppBar(
+        systemOverlayStyle: SystemUiOverlayStyle(statusBarColor: primaryColor),
         leading: IconButton(
           padding: const EdgeInsets.only(left: 14, top: 12),
           icon: const Icon(Icons.arrow_back_ios, color: Color(0xFF363f93)),
@@ -45,7 +47,7 @@ class _RegisterPageState extends State<RegisterPage> {
             children: [
               TextWidget(
                 text: "Bem-vindo ao ",
-                fontSize: 28,
+                fontSize: 26,
                 isUnderLine: false,
               ),
               TextWidget(
