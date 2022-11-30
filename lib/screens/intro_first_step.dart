@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:meu_barbeiro/screens/register_page.dart';
+import 'package:meu_barbeiro/values/colors.dart';
 import 'package:meu_barbeiro/values/utils.dart';
 
 class IntroFirstStep extends StatelessWidget {
@@ -113,7 +114,7 @@ class IntroFirstStep extends StatelessWidget {
                           fontSize: width / 24,
                           fontWeight: FontWeight.w600,
                           height: 1.5,
-                          color: const Color(0xff061023),
+                          color: primaryColor,
                         ),
                       ),
                     ),

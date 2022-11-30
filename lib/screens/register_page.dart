@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meu_barbeiro/screens/components/text_widget.dart';
+import 'package:meu_barbeiro/values/colors.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -9,15 +10,16 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-  TextEditingController passController = TextEditingController();
-  TextEditingController repassController = TextEditingController();
-  TextEditingController emailController = TextEditingController();
-  TextEditingController nameController = TextEditingController();
+  late final TextEditingController passController = TextEditingController();
+  late final TextEditingController repassController = TextEditingController();
+  late final TextEditingController emailController = TextEditingController();
+  late final TextEditingController nameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     final double width = MediaQuery.of(context).size.width;
     final double height = MediaQuery.of(context).size.height;
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -30,84 +32,108 @@ class _RegisterPageState extends State<RegisterPage> {
         backgroundColor: Colors.transparent,
         elevation: 0.0,
       ),
-      body: Container(
-        padding: const EdgeInsets.only(left: 40, right: 40, top: 24),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            TextWidget(text: "Here to Get", fontSize: 26, isUnderLine: false),
-            TextWidget(text: "Welcomed !", fontSize: 26, isUnderLine: false),
-            SizedBox(height: height * 0.05),
-            TextFieldInput(
-              textString: "Nome ou Apelido",
-              textController: nameController,
-              obscureText: false,
-            ),
-            SizedBox(
-              height: height * .02,
-            ),
-            TextFieldInput(
-              textString: "Telefone",
-              textController: emailController,
-              obscureText: false,
-            ),
-            SizedBox(
-              height: height * .02,
-            ),
-            TextFieldInput(
-              textString: "Senha",
-              textController: passController,
-              obscureText: true,
-            ),
-            SizedBox(
-              height: height * .02,
-            ),
-            TextFieldInput(
-              textString: "Repita sua senha",
-              textController: repassController,
-              obscureText: true,
-            ),
-            SizedBox(
-              height: height * .05,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                TextWidget(text: "Sign up", fontSize: 22, isUnderLine: false),
-                GestureDetector(
+      body: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.only(
+            left: width * 0.09,
+            right: width * 0.09,
+            top: height * 0.04,
+            bottom: height * 0.04,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              TextWidget(
+                text: "Bem-vindo ao ",
+                fontSize: 28,
+                isUnderLine: false,
+              ),
+              TextWidget(
+                text: "Meu Barbeiro !",
+                fontSize: 28,
+                isUnderLine: false,
+                font: 'Syncopate',
+                fontWeight: FontWeight.w800,
+              ),
+              SizedBox(height: height * 0.05),
+              TextFieldInput(
+                textString: "Nome ou Apelido",
+                textController: nameController,
+                obscureText: false,
+              ),
+              SizedBox(
+                height: height * .02,
+              ),
+              TextFieldInput(
+                textString: "Telefone",
+                textController: emailController,
+                obscureText: false,
+              ),
+              SizedBox(
+                height: height * .02,
+              ),
+              TextFieldInput(
+                textString: "Senha",
+                textController: passController,
+                obscureText: true,
+              ),
+              SizedBox(
+                height: height * .02,
+              ),
+              TextFieldInput(
+                textString: "Repita sua senha",
+                textController: repassController,
+                obscureText: true,
+              ),
+              SizedBox(
+                height: height * .05,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  TextWidget(
+                      text: "Entre agora", fontSize: 22, isUnderLine: false),
+                  GestureDetector(
                     onTap: () {},
                     child: Container(
                       height: 80,
                       width: 80,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: Color(0xFF363f93),
+                        color: primaryColor,
                       ),
-                      child: Icon(Icons.arrow_forward,
-                          color: Colors.white, size: 30),
-                    ))
-              ],
-            ),
-            SizedBox(height: height * 0.1),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Container()));
-                  },
-                  child: TextWidget(
-                      text: "Sign in", fontSize: 16, isUnderLine: true),
-                ),
-                GestureDetector(
-                  onTap: () {},
-                  child: TextWidget(
-                      text: "Forgot Password", fontSize: 16, isUnderLine: true),
-                )
-              ],
-            ),
-          ],
+                      child: const Icon(
+                        Icons.arrow_forward,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: height * 0.1),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Container()));
+                    },
+                    child: TextWidget(
+                        text: "Registrar", fontSize: 16, isUnderLine: true),
+                  ),
+                  GestureDetector(
+                    onTap: () {},
+                    child: TextWidget(
+                        text: "Esqueci a senha",
+                        fontSize: 16,
+                        isUnderLine: true),
+                  )
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

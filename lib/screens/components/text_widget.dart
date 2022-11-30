@@ -1,39 +1,46 @@
 import 'package:flutter/material.dart';
+import 'package:meu_barbeiro/values/colors.dart';
 
+// ignore: must_be_immutable
 class TextWidget extends StatelessWidget {
   final String text;
   int fontSize;
   bool isUnderLine;
-  final Color color;
+  String font;
+  FontWeight fontWeight;
+
   TextWidget(
       {Key? key,
       required this.text,
       required this.fontSize,
       this.isUnderLine = false,
-      this.color = const Color(0xFF363f93)})
+      this.font = 'Avenir',
+      this.fontWeight = FontWeight.w900})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(
-        bottom: 3, // space between underline and text
+      padding: const EdgeInsets.only(
+        bottom: 3,
       ),
       decoration: BoxDecoration(
-          border: Border(
-              bottom: BorderSide(
-        color: isUnderLine
-            ? Color(0xFF363f93)
-            : Color(0xFFffffff), // Text colour here
-        width: 1.0, // Underline width
-      ))),
+        border: Border(
+          bottom: BorderSide(
+            color: isUnderLine
+                ? const Color.fromARGB(255, 17, 20, 49) //Color(0xFF363f93)
+                : const Color.fromARGB(0, 255, 255, 255),
+            width: 1.0,
+          ),
+        ),
+      ),
       child: Text(
-        this.text,
+        text,
         style: TextStyle(
-          fontSize: this.fontSize.toDouble(),
-          fontFamily: "Avenir",
-          fontWeight: FontWeight.w900,
-          color: this.color,
+          fontSize: fontSize.toDouble(),
+          fontFamily: font,
+          fontWeight: fontWeight,
+          color: primaryColor,
         ),
       ),
     );
