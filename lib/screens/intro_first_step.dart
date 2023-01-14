@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:meu_barbeiro/screens/components/button_component.dart';
 import 'package:meu_barbeiro/screens/register_page.dart';
 import 'package:meu_barbeiro/values/colors.dart';
 import 'package:meu_barbeiro/values/utils.dart';
@@ -20,7 +21,7 @@ class IntroFirstStep extends StatelessWidget {
         ),
         child: Container(
           width: double.infinity,
-          padding: EdgeInsets.only(bottom: height / 16),
+          padding: EdgeInsets.only(bottom: height / 12),
           decoration: const BoxDecoration(
             color: Color(0xffffffff),
             image: DecorationImage(
@@ -88,17 +89,10 @@ class IntroFirstStep extends StatelessWidget {
                       width: width / 8,
                       height: height / 14,
                     ),
-                    ElevatedButton(
-                      style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all<Color>(Colors.white),
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(196),
-                          ),
-                        ),
-                      ),
+                    ButtonComponent(
+                      title: 'Continuar',
+                      height: height,
+                      width: width,
                       onPressed: () {
                         Navigator.push(
                           context,
@@ -107,22 +101,12 @@ class IntroFirstStep extends StatelessWidget {
                           ),
                         );
                       },
-                      child: Text(
-                        'Continuar',
-                        style: SafeGoogleFont(
-                          'Poppins',
-                          fontSize: width / 24,
-                          fontWeight: FontWeight.w600,
-                          height: 1.5,
-                          color: primaryColor,
-                        ),
-                      ),
                     ),
                   ],
                 ),
               ),
               SizedBox(
-                height: width / 32,
+                height: width / 22,
               ),
               SizedBox(
                 width: width / 3.8,

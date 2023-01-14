@@ -11,8 +11,10 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # UI
   cupertino_icons: ^1.0.2
   google_fonts: ^3.0.1
+  modal_bottom_sheet: ^2.1.2
 
 dev_dependencies:
   flutter_test:

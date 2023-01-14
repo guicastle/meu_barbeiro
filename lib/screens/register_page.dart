@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:meu_barbeiro/screens/components/button_component.dart';
 import 'package:meu_barbeiro/screens/components/text_widget.dart';
+import 'package:meu_barbeiro/screens/plan_page.dart';
 import 'package:meu_barbeiro/values/colors.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -93,10 +95,40 @@ class _RegisterPageState extends State<RegisterPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  TextWidget(
-                      text: "Entre agora", fontSize: 22, isUnderLine: false),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Container(),
+                        ),
+                      );
+                    },
+                    child: TextWidget(
+                        text: "Logar", fontSize: 16, isUnderLine: true),
+                  ),
                   GestureDetector(
                     onTap: () {},
+                    child: TextWidget(
+                        text: "Esqueci a senha",
+                        fontSize: 16,
+                        isUnderLine: true),
+                  )
+                ],
+              ),
+              SizedBox(height: height * 0.1),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const PlanPage(),
+                        ),
+                      );
+                    },
                     child: Container(
                       height: 80,
                       width: 80,
@@ -111,28 +143,26 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                     ),
                   ),
+                  // ButtonComponent(
+                  //   title: 'Continuar',
+                  //   colorButton: primaryColor,
+                  //   fontColor: Colors.white,
+                  //   iconColor: Colors.white,
+                  //   height: height,
+                  //   width: width,
+                  //   onPressed: () {
+                  //     Navigator.push(
+                  //       context,
+                  //       MaterialPageRoute(
+                  //         builder: (context) => const PlanPage(),
+                  //       ),
+                  //     );
+                  //   },
+                  // ),
                 ],
               ),
-              SizedBox(height: height * 0.1),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Container()));
-                    },
-                    child: TextWidget(
-                        text: "Registrar", fontSize: 16, isUnderLine: true),
-                  ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: TextWidget(
-                        text: "Esqueci a senha",
-                        fontSize: 16,
-                        isUnderLine: true),
-                  )
-                ],
+              SizedBox(
+                height: width / 12,
               ),
             ],
           ),
