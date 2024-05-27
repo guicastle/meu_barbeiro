@@ -1,0 +1,48 @@
+# Define line endings for text files .gitattributes
+*.dart text eol=lf
+*.yaml text eol=lf
+*.md text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.xml text eol=lf
+*.sh text eol=lf
+*.bat text eol=crlf
+
+# Treat binary files as binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.jar binary
+*.keystore binary
+
+# Dart/Flutter specific files
+pubspec.yaml text eol=lf
+pubspec.lock text eol=lf
+*.dart_tool/** binary
+*.packages text eol=lf
+
+# Flutter build output
+build/** binary
+ios/Flutter/Flutter.framework/** binary
+ios/Flutter/App.framework/** binary
+android/app/build/** binary
+
+# Exclude generated files from diffs
+*.g.dart linguist-generated
+*.freezed.dart linguist-generated
+*.mocks.dart linguist-generated
+*.gr.dart linguist-generated
+*.iconfig.dart linguist-generated
+
+# Exclude IDE-specific files
+.idea/** binary
+*.iml binary
+*.ipr binary
+*.iws binary
+*.vscode/** binary
